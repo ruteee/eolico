@@ -4,11 +4,11 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-public class ParqueEolico {
+public class Parque {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private long id;
 
     private String nome;
     private int latitude;
@@ -16,19 +16,19 @@ public class ParqueEolico {
     private Float potenciaInstalada;
 
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(fetch = FetchType.LAZY, optional = false,cascade = CascadeType.ALL)
     @JoinColumn(name="complexo_id")
     private Complexo complexo;
 
-    @OneToMany(mappedBy = "parqueEolico")
+    @OneToMany(mappedBy = "parque")
     private List<Aerogerador> aerogeradores;
 
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -73,6 +73,12 @@ public class ParqueEolico {
         this.complexo = complexo;
     }
 
+    public List<Aerogerador> getAerogeradores() {
+        return aerogeradores;
+    }
 
+    public void setAerogeradores(List<Aerogerador> aerogeradores) {
+        this.aerogeradores = aerogeradores;
+    }
 }
 

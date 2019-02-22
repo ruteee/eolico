@@ -1,19 +1,20 @@
 package com.eolicoproject.eolico;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
-public class Aerogerador {
+public class Aerogerador implements Serializable {
 
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private long id;
 
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(fetch = FetchType.LAZY, optional = false, cascade = CascadeType.ALL)
     @JoinColumn(name="parque_id")
-    private ParqueEolico  parqueEolico;
+    private Parque parque;
 
     private String nome;
     private Float latitude;
@@ -22,8 +23,8 @@ public class Aerogerador {
     private Float diametroVarredura;
     private String modelo;
 
-    public Aerogerador(ParqueEolico parqueEolico, String nome, Float latitude, Float longitude, Float alturaTorre, Float diametroVarredura, String modelo) {
-        this.parqueEolico = parqueEolico;
+    public Aerogerador(Parque parque, String nome, Float latitude, Float longitude, Float alturaTorre, Float diametroVarredura, String modelo) {
+        this.parque = parque;
         this.nome = nome;
         this.latitude = latitude;
         this.longitude = longitude;
@@ -32,11 +33,11 @@ public class Aerogerador {
         this.modelo = modelo;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -48,12 +49,12 @@ public class Aerogerador {
         this.nome = nome;
     }
 
-    public ParqueEolico getParqueEolico() {
-        return parqueEolico;
+    public Parque getParque() {
+        return parque;
     }
 
-    public void setParqueEolico(ParqueEolico parqueEolico) {
-        this.parqueEolico = parqueEolico;
+    public void setParque(Parque parque) {
+        this.parque = this.parque;
     }
 
 

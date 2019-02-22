@@ -14,8 +14,8 @@ public class Complexo {
     private String uf;
     private String identificacao;
 
-    @OneToMany(mappedBy = "complexo")
-    private List<ParqueEolico> parques;
+    @OneToMany(mappedBy = "complexo", cascade = CascadeType.ALL)
+    private List<Parque> parques;
 
 
     public String getNome() {
@@ -41,4 +41,6 @@ public class Complexo {
     public void setIdentificacao(String identificacao) {
         this.identificacao = identificacao;
     }
+
+
 }
