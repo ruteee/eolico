@@ -42,5 +42,11 @@ public class Complexo {
         this.identificacao = identificacao;
     }
 
+    public List<Parque> getParques() {
+        return parques;
+    }
 
+    public void setParques(List<Parque> parques) {
+        this.parques = parques;
+    }
 }

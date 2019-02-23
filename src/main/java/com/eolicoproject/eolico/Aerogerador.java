@@ -12,7 +12,7 @@ public class Aerogerador {
     private long id;
 
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name="parque_id")
     private Parque parque;
 
@@ -33,13 +33,6 @@ public class Aerogerador {
 //        this.modelo = modelo;
 //    }
 
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
 
     public String getNome() {
         return nome;

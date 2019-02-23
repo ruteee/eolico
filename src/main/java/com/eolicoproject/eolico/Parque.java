@@ -24,14 +24,6 @@ public class Parque {
     private List<Aerogerador> aerogeradores;
 
 
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
     public String getNome() {
         return nome;
     }
@@ -73,12 +65,12 @@ public class Parque {
         this.complexo = complexo;
     }
 
-//    public List<Aerogerador> getAerogeradores() {
-//        return aerogeradores;
-//    }
-//
-//    public void setAerogeradores(List<Aerogerador> aerogeradores) {
-//        this.aerogeradores = aerogeradores;
-//    }
+    public List<Aerogerador> getAerogeradores() {
+        return aerogeradores;
+    }
+
+    public void setAerogeradores(List<Aerogerador> aerogeradores) {
+        this.aerogeradores = aerogeradores;
+    }
 }
 
