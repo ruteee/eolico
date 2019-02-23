@@ -20,7 +20,7 @@ public class Parque {
     @JoinColumn(name="complexo_id")
     private Complexo complexo;
 
-    @OneToMany(mappedBy = "parque")
+    @OneToMany(mappedBy = "parque", cascade = CascadeType.ALL)
     private List<Aerogerador> aerogeradores;
 
 
@@ -73,12 +73,12 @@ public class Parque {
         this.complexo = complexo;
     }
 
-    public List<Aerogerador> getAerogeradores() {
-        return aerogeradores;
-    }
-
-    public void setAerogeradores(List<Aerogerador> aerogeradores) {
-        this.aerogeradores = aerogeradores;
-    }
+//    public List<Aerogerador> getAerogeradores() {
+//        return aerogeradores;
+//    }
+//
+//    public void setAerogeradores(List<Aerogerador> aerogeradores) {
+//        this.aerogeradores = aerogeradores;
+//    }
 }
 

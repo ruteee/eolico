@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-public class Aerogerador implements Serializable {
+public class Aerogerador {
 
 
     @Id
@@ -23,15 +23,15 @@ public class Aerogerador implements Serializable {
     private Float diametroVarredura;
     private String modelo;
 
-    public Aerogerador(Parque parque, String nome, Float latitude, Float longitude, Float alturaTorre, Float diametroVarredura, String modelo) {
-        this.parque = parque;
-        this.nome = nome;
-        this.latitude = latitude;
-        this.longitude = longitude;
-        this.alturaTorre = alturaTorre;
-        this.diametroVarredura = diametroVarredura;
-        this.modelo = modelo;
-    }
+//    public Aerogerador(Parque parque, String nome, Float latitude, Float longitude, Float alturaTorre, Float diametroVarredura, String modelo) {
+//        this.parque = parque;
+//        this.nome = nome;
+//        this.latitude = latitude;
+//        this.longitude = longitude;
+//        this.alturaTorre = alturaTorre;
+//        this.diametroVarredura = diametroVarredura;
+//        this.modelo = modelo;
+//    }
 
     public long getId() {
         return id;
@@ -48,15 +48,6 @@ public class Aerogerador implements Serializable {
     public void setNome(String nome) {
         this.nome = nome;
     }
-
-    public Parque getParque() {
-        return parque;
-    }
-
-    public void setParque(Parque parque) {
-        this.parque = this.parque;
-    }
-
 
     public Float getLatitude() {
         return latitude;
@@ -96,6 +87,14 @@ public class Aerogerador implements Serializable {
 
     public void setModelo(String modelo) {
         this.modelo = modelo;
+    }
+
+    public Parque getParque() {
+        return parque;
+    }
+
+    public void setParque(Parque parque) {
+        this.parque = parque;
     }
 }
 
