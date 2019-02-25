@@ -1,6 +1,7 @@
 package com.eolicoproject.eolico.domain;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class Aerogerador {
@@ -15,11 +16,17 @@ public class Aerogerador {
     @JoinColumn(name="parque_id")
     private Parque parque;
 
+    @NotNull
+    @Column(length = 45)
     private String nome;
+
     private Float latitude;
     private Float longitude;
     private Float alturaTorre;
     private Float diametroVarredura;
+
+    @NotNull
+    @Column(length = 45)
     private String modelo;
 
 

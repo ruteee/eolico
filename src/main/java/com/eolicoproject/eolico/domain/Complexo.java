@@ -1,6 +1,7 @@
 package com.eolicoproject.eolico.domain;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
 @Entity
@@ -10,9 +11,18 @@ public class Complexo {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
+
+    @NotNull
+    @Column(length = 45)
     private String nome;
+
+    @NotNull
+    @Column(length = 45)
     private String uf;
-    private String identificacao;
+
+    @NotNull
+    @Column(length = 45)
+    private String identificador;
 
     @OneToMany(mappedBy = "complexo", cascade = CascadeType.ALL)
     private List<Parque> parques;
@@ -34,12 +44,12 @@ public class Complexo {
         this.uf = uf;
     }
 
-    public String getIdentificacao() {
-        return identificacao;
+    public String getIdentificador() {
+        return identificador;
     }
 
-    public void setIdentificacao(String identificacao) {
-        this.identificacao = identificacao;
+    public void setIdentificador(String identificador) {
+        this.identificador = identificador;
     }
 
     public List<Parque> getParques() {

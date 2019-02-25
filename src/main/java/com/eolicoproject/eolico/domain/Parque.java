@@ -4,6 +4,7 @@ import com.eolicoproject.eolico.domain.Aerogerador;
 import com.eolicoproject.eolico.domain.Complexo;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
 @Entity
@@ -13,9 +14,14 @@ public class Parque {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
+    @NotNull
+    @Column(length = 45)
     private String nome;
-    private int latitude;
-    private int longitude;
+
+    private Float latitude;
+    private Float longitude;
+
+    @NotNull
     private Float potenciaInstalada;
 
 
@@ -35,19 +41,19 @@ public class Parque {
         this.nome = nome;
     }
 
-    public int getLatitude() {
+    public Float getLatitude() {
         return latitude;
     }
 
-    public void setLatitude(int latitude) {
+    public void setLatitude(Float latitude) {
         this.latitude = latitude;
     }
 
-    public int getLongitude() {
+    public Float getLongitude() {
         return longitude;
     }
 
-    public void setLongitude(int longitude) {
+    public void setLongitude(Float longitude) {
         this.longitude = longitude;
     }
 
