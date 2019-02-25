@@ -9,12 +9,4 @@ import java.util.List;
 
 @RepositoryRestResource(collectionResourceRel = "complexo", path="complexo")
 public interface ComplexoRepository extends PagingAndSortingRepository<Complexo, Long> {
-
-
-    <S extends Complexo> S save(S s);
-
-    List<Complexo> findByNome(@Param("name") String nome);
-
-
-   Complexo findComplexoById(@Param("id") Long id);
 }
