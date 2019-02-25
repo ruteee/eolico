@@ -19,7 +19,7 @@ public class Parque {
     private Float potenciaInstalada;
 
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false,cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.EAGER, optional = false,cascade = CascadeType.ALL)
     @JoinColumn(name="complexo_id")
     private Complexo complexo;
 
